@@ -10,7 +10,23 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>();
+            //LinkedList 双向有序列表，为任何一端的插入和删除提供优化（即可作队列又可以当栈）
+            LinkedList<int> numbers = new LinkedList<int>();
+            foreach (int number in new int[] {10,8,6,4,2 })
+            {
+                numbers.AddFirst(number);
+            }
+            foreach (int number in numbers) //正向遍历
+            {
+                Console.WriteLine(number);
+            }
+            for (LinkedListNode<int> node = numbers.Last; node != null; node = node.Previous)
+            {
+                Console.WriteLine(node.Value);
+            }
+
+            //List 使用方法和数组差不多，但提供了搜索和排序算法
+            /*List<int> numbers = new List<int>();
             foreach (int number in new int[12] { 10, 9, 8, 7, 7, 6, 5, 10, 4, 3, 2, 1 })
             {
                 numbers.Add(number);
@@ -23,7 +39,7 @@ namespace cmd_test
             {
                 Console.WriteLine(number);
             }
-
+            */
         }
     }
 }
