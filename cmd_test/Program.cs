@@ -10,8 +10,21 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //Queue 先进先出队列
+            Queue<int> numbers = new Queue<int>();
+            foreach (int number in new int[] { 9, 3, 7, 2 })
+            {
+                numbers.Enqueue(number);
+                Console.WriteLine($"{number} has joined the queue");
+            }
+            while (numbers.Count > 0)
+            {
+                Console.WriteLine($"{numbers.Dequeue()} has left the queue");                           
+            }
+
+
             //LinkedList 双向有序列表，为任何一端的插入和删除提供优化（即可作队列又可以当栈）
-            LinkedList<int> numbers = new LinkedList<int>();
+            /*LinkedList<int> numbers = new LinkedList<int>();
             foreach (int number in new int[] {10,8,6,4,2 })
             {
                 numbers.AddFirst(number);
@@ -23,7 +36,7 @@ namespace cmd_test
             for (LinkedListNode<int> node = numbers.Last; node != null; node = node.Previous)
             {
                 Console.WriteLine(node.Value);
-            }
+            }*/
 
             //List 使用方法和数组差不多，但提供了搜索和排序算法
             /*List<int> numbers = new List<int>();
