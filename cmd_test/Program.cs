@@ -10,8 +10,20 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //Stack 后入先出栈
+            Stack<int> numbers = new Stack<int>();
+            foreach (int number in new int[] { 9, 3, 7, 2 })
+            {
+                numbers.Push(number);
+                Console.WriteLine($"{number} has been pushed on the stack");
+            }
+            while (numbers.Count > 0)
+            {
+                Console.WriteLine($"{numbers.Pop()} has been popped off the stack");
+            }
+
             //Queue 先进先出队列
-            Queue<int> numbers = new Queue<int>();
+            /*Queue<int> numbers = new Queue<int>();
             foreach (int number in new int[] { 9, 3, 7, 2 })
             {
                 numbers.Enqueue(number);
@@ -20,7 +32,7 @@ namespace cmd_test
             while (numbers.Count > 0)
             {
                 Console.WriteLine($"{numbers.Dequeue()} has left the queue");                           
-            }
+            }*/
 
 
             //LinkedList 双向有序列表，为任何一端的插入和删除提供优化（即可作队列又可以当栈）
