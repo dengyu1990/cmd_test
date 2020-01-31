@@ -10,7 +10,7 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
-            //Stack 后入先出栈
+            //Stack 后入先出栈 
             Stack<int> numbers = new Stack<int>();
             foreach (int number in new int[] { 9, 3, 7, 2 })
             {
