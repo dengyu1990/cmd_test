@@ -10,8 +10,22 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //HashSet 哈希表
+            HashSet<string> employees = new HashSet<string>(new string[] { "DengYu", "Qiubao" });
+            HashSet<string> customers = new HashSet<string>(new string[] { "DengYong", "DengMeng" });
+
+            employees.Add("DengMeng");
+            customers.Add("QiuBao");
+
+            customers.IntersectWith(employees); //即是客户又是员工的人
+            foreach(string name in customers)
+            {
+                Console.WriteLine(name);
+            }
+
             //Dictionary 字典（键值关联数组）
-            Dictionary<string, int> ages = new Dictionary<string, int>();
+            /*Dictionary<string, int> ages = new Dictionary<string, int>();
+            //SortedDictionary<string, int> ages = new SortedDictionary<string, int>(); 有序键字典
             ages.Add("DengYu", 29);
             ages.Add("QiuBao", 28);
             ages["DengYong"] = 5;
@@ -19,7 +33,7 @@ namespace cmd_test
             foreach (KeyValuePair<string, int> element in ages)
             {
                 Console.WriteLine($"Name:{element.Key}  Age:{element.Value}");
-            }
+            }*/
 
             //Stack 后入先出栈 
             /*Stack<int> numbers = new Stack<int>();
