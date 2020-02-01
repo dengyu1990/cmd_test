@@ -10,8 +10,19 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //Dictionary 字典（键值关联数组）
+            Dictionary<string, int> ages = new Dictionary<string, int>();
+            ages.Add("DengYu", 29);
+            ages.Add("QiuBao", 28);
+            ages["DengYong"] = 5;
+            ages["DengMeng"] = 3;
+            foreach (KeyValuePair<string, int> element in ages)
+            {
+                Console.WriteLine($"Name:{element.Key}  Age:{element.Value}");
+            }
+
             //Stack 后入先出栈 
-            Stack<int> numbers = new Stack<int>();
+            /*Stack<int> numbers = new Stack<int>();
             foreach (int number in new int[] { 9, 3, 7, 2 })
             {
                 numbers.Push(number);
@@ -20,7 +31,7 @@ namespace cmd_test
             while (numbers.Count > 0)
             {
                 Console.WriteLine($"{numbers.Pop()} has been popped off the stack");
-            }
+            }*/
 
             //Queue 先进先出队列
             /*Queue<int> numbers = new Queue<int>();
