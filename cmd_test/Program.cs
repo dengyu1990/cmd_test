@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.IO;
 
 namespace cmd_test
 {
@@ -10,8 +12,13 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            WebRequest req = WebRequest.Create("http://www.azure.cn");
+            WebResponse resp = req.GetResponse();
+            StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.ASCII);
+            Console.WriteLine(reader.ReadToEnd());
+
             //HashSet 哈希表
-            HashSet<string> employees = new HashSet<string>(new string[] { "DengYu", "Qiubao" });
+            /*HashSet<string> employees = new HashSet<string>(new string[] { "DengYu", "Qiubao" });
             HashSet<string> customers = new HashSet<string>(new string[] { "DengYong", "DengMeng" });
 
             employees.Add("DengMeng");
@@ -21,7 +28,7 @@ namespace cmd_test
             foreach(string name in customers)
             {
                 Console.WriteLine(name);
-            }
+            }*/
 
             //Dictionary 字典（键值关联数组）
             /*Dictionary<string, int> ages = new Dictionary<string, int>();
