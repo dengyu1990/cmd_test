@@ -12,10 +12,24 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
-            WebRequest req = WebRequest.Create("http://www.azure.cn");
+            //序列化与反序列化（仅示例代码）
+            /*Person p = new Person();
+            using(FileStream fsWrite = new FileStream(@"C:\Users\dy\1.txt"))
+            {
+                BinaryFormatter fsWrite = new BinaryFormatter();
+                bf.Serialize(fsWrite,p);  //序列化
+            }
+            using(FileStream fsRead = new FileStream(@"C:\Users\dy\1.txt"))
+            {
+                BinaryFormatter fsRead = new BinaryFormatter();
+                p = (Person)bf.Deserialize(fsRead);  //反序列化
+            }*/
+
+            //普通网络请求的示例
+            /*WebRequest req = WebRequest.Create("http://www.azure.cn");
             WebResponse resp = req.GetResponse();
             StreamReader reader = new StreamReader(resp.GetResponseStream(), Encoding.ASCII);
-            Console.WriteLine(reader.ReadToEnd());
+            Console.WriteLine(reader.ReadToEnd());*/
 
             //HashSet 哈希表
             /*HashSet<string> employees = new HashSet<string>(new string[] { "DengYu", "Qiubao" });
