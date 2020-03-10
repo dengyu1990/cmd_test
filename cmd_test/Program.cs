@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace cmd_test
 {
@@ -12,6 +13,18 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //MD5加解密
+            /*MD5 md5 = MD5.Create();
+            byte[] buffer = Encoding.Default.GetBytes("Icefish Coporation");
+            byte[] MD5buffer = md5.ComputeHash(buffer);
+            //Console.WriteLine(Encoding.Default.GetString(MD5buffer));
+            string strNew = "";
+            for (int i = 0; i < MD5buffer.Length; i++)
+            {
+                strNew += MD5buffer[i].ToString("x2"); //转行成16进制
+            }
+            Console.WriteLine(strNew);*/
+
             //序列化与反序列化（仅示例代码）
             /*Person p = new Person();
             using(FileStream fsWrite = new FileStream(@"C:\Users\dy\1.txt"))
