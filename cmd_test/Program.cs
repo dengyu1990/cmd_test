@@ -13,6 +13,9 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //测试VS2019中的 GitHub连接
+            Console.WriteLine("貌似连接不上了...");
+
             //MD5加解密
             /*MD5 md5 = MD5.Create();
             byte[] buffer = Encoding.Default.GetBytes("Icefish Coporation");
