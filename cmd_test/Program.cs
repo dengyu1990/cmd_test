@@ -13,8 +13,29 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
-            //测试VS2019中的 GitHub连接
-            Console.WriteLine("可恶");
+            //Directory类的使用（创建文件夹）
+            /*Directory.CreateDirectory(@"A:\test");
+            Console.WriteLine("创建文件夹test成功");
+            //带上参数可以删除该文件夹下的子文件夹和文件，不带若内含文件则无法删除
+            Directory.Delete(@"A:\test", true);
+            Directory.Move(@"A:\test", @"A:\Temp"); //实际把test改名成Temp（注意：不能跨磁盘移动）
+            //获得指定文件夹下所有文件的全路径（带参数可过滤特定文件类型）
+            string[] paths = Directory.GetFiles(@"B:\Brainwash", "*.jpg");
+            foreach (string path in paths)
+            {
+                Console.WriteLine(path);
+            }
+            //获得指定文件夹下所有文件夹的全路径（带参数可过滤特定文件类型）
+            string[] paths = Directory.GetDirectories(@"B:");
+            foreach (string path in paths)
+            {
+                Console.WriteLine(path);
+            }
+            //判断文件夹存在(不能判断文件)
+            if (Directory.Exists(@"A:\Temp\a.txt"))
+            {
+                Console.WriteLine("该路径下的文件夹存在");
+            }*/
 
             //MD5加解密
             /*MD5 md5 = MD5.Create();
