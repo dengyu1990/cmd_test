@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace cmd_test
 {
@@ -13,6 +14,24 @@ namespace cmd_test
     {
         static void Main(string[] args)
         {
+            //获得当前程序中所有正在运行的进程
+            Process[] pros = Process.GetProcesses();
+            foreach (var item in pros)
+            {
+                Console.WriteLine(item);
+            }
+            //通过进程打开一些程序()
+            Process.Start("calc"); //计算器
+            Process.Start("mspaint"); //Windows自带画图
+            Process.Start("notepad"); //记事本
+            Process.Start("iexplore", "http://www.icefish.cn"); //IE游览器
+            //通过一个进程打开指定的文件
+            ProcessStartInfo psi = new ProcessStartInfo(@"C:\Users\Administrator\Desktop\qiubao.txt");
+            Process p = new Process();
+            p.StartInfo = psi;
+            p.Start();
+
+
             //Directory类的使用（创建文件夹）
             /*Directory.CreateDirectory(@"A:\test");
             Console.WriteLine("创建文件夹test成功");
